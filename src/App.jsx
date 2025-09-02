@@ -11,40 +11,46 @@ import Launch from "./components/Launch";
 import Navigation from "./components/Navigation";
 import Crew from "./components/Crew";
 import CrewAdd from "./components/CrewAdd";
+export const ApiContext = createContext();
 
 function App() {
-  const [data, setData] = useState([]);
+  const [launchData, setLaunchData] = useState([]);
   const api = "http://localhost:3001";
-  const url = `${api}/launches`;
+  const launchUrl = `${api}/launches`;
+
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(url);
+      const response = await fetch(launchUrl);
       const jsonData = await response.json();
-      setData(jsonData);
+      setLaunchData(jsonData);
     };
     fetchData();
   }, []);
 
   return (
-    <div className="container">
-      <h1>SpaceX Viewer</h1>
+    <>
+      <ApiContext.Provider value={{ api, launchData, setLaunchData }}>
+        <div className="container">
+          <h1>SpaceX Viewer</h1>
 
-      <div className="container-nav-main">
-        <nav className="sidebar">
-          <Navigation />
-        </nav>
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/launches/:id" element={<Launch data={data} />} />
-            <Route path="/launches" element={<Launches api={api} />} />
-            <Route path="/launches/add" element={<LaunchesAdd api={api} />} />
-            <Route path="/crew" element={<Crew api={api} />} />
-            <Route path="/crew/add" element={<CrewAdd api={api} />} />
-          </Routes>
-        </main>
-      </div>
-    </div>
+          <div className="container-nav-main">
+            <nav className="sidebar">
+              <Navigation />
+            </nav>
+            <main className="main">
+              <Routes>
+                <Route path="/" element={<Welcome />} />
+                <Route path="/launches/:id" element={<Launch />} />
+                <Route path="/launches" element={<Launches />} />
+                <Route path="/launches/add" element={<LaunchesAdd />} />
+                <Route path="/crew" element={<Crew />} />
+                <Route path="/crew/add" element={<CrewAdd />} />
+              </Routes>
+            </main>
+          </div>
+        </div>
+      </ApiContext.Provider>
+    </>
   );
 }
 

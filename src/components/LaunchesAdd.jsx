@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ApiContext } from "../App";
 
-const LaunchesAdd = ({ api }) => {
-  const url = `${api}/launches`;
+const LaunchesAdd = () => {
+  const { api } = useContext(ApiContext);
+  const url = `${api}/launches`; 
   const [formData, setFormData] = useState({
     flight_number: "1",
     video_link: "https://www.youtube.com/watch?v=_hu9w2NwxNs",

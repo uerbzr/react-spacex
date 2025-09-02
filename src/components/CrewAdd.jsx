@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ApiContext } from "../App";
 
 const CrewAdd = () => {
   const navigate = useNavigate();
+  const { api } = useContext(ApiContext);
+  const url = `${api}/crew`;
 
   const [formData, setFormData] = useState({
     name: "Robert Behnken",
@@ -25,7 +28,7 @@ const CrewAdd = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3001/crew", {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

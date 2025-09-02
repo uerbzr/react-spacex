@@ -16477,6 +16477,36 @@
         "mission_patch": "https://i.etsystatic.com/33992268/r/il/ba64dc/4947766593/il_570xN.4947766593_40x7.jpg",
         "video_link": "https://www.youtube.com/watch?v=_hu9w2NwxNs"
       }
+    },
+    {
+      "id": "7559",
+      "flight_number": 1,
+      "details": "Nigel mows the lawn in rural France",
+      "mission_name": "Operation lawn mow",
+      "launch_site": {
+        "site_id": "1",
+        "site_name": "Maison de Sibbert",
+        "site_name_long": "Rural France"
+      },
+      "links": {
+        "mission_patch": "https://i.etsystatic.com/33992268/r/il/ba64dc/4947766593/il_570xN.4947766593_40x7.jpg",
+        "video_link": "https://www.youtube.com/watch?v=_hu9w2NwxNs"
+      }
+    },
+    {
+      "id": "8531",
+      "flight_number": 1223,
+      "details": "Nigel mows the lawn in rural France",
+      "mission_name": "Operation lawn mow",
+      "launch_site": {
+        "site_id": "1",
+        "site_name": "Maison de Sibbert",
+        "site_name_long": "Rural France"
+      },
+      "links": {
+        "mission_patch": "https://i.etsystatic.com/33992268/r/il/ba64dc/4947766593/il_570xN.4947766593_40x7.jpg",
+        "video_link": "https://www.youtube.com/watch?v=_hu9w2NwxNs"
+      }
     }
   ],
   "crew": [
@@ -16809,6 +16839,28 @@
       ],
       "status": "active",
       "id": "62dd7253202306255024d13f"
+    },
+    {
+      "id": "5ebf1a6e23a9a60006e03a7a",
+      "name": "Robert Behnken",
+      "agency": "NASA",
+      "image": "https://imgur.com/0smMgMH.png",
+      "wikipedia": "https://en.wikipedia.org/wiki/Robert_L._Behnken",
+      "launches": [
+        "5eb87d46ffd86e000604b388"
+      ],
+      "status": "active"
+    },
+    {
+      "id": "5ebf1a6e23a9a60006e03a7a",
+      "name": "Robert Behnken",
+      "agency": "NASA",
+      "image": "https://imgur.com/0smMgMH.png",
+      "wikipedia": "https://en.wikipedia.org/wiki/Robert_L._Behnken",
+      "launches": [
+        "5eb87d46ffd86e000604b388"
+      ],
+      "status": "active"
     },
     {
       "id": "5ebf1a6e23a9a60006e03a7a",

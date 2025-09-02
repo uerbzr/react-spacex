@@ -1,10 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { ApiContext } from "../App";
 
-function Launches({api}) {
+function Launches() {
+  const { api, launchData, setLaunchData } = useContext(ApiContext);
   const url = `${api}/launches`;
-  const [data, setData] = useState([]);
+
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -12,18 +14,18 @@ function Launches({api}) {
     const fetchData = async () => {
       const response = await fetch(url);
       const jsonData = await response.json();
-      setData(jsonData);
+      setLaunchData(jsonData);
       setFilteredData(jsonData);
     };
     fetchData();
   }, []);
 
   useEffect(() => {
-    const filtered = data.filter((launch) =>
+    const filtered = launchData.filter((launch) =>
       launch.mission_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredData(filtered);
-  }, [searchTerm, data]);
+  }, [searchTerm, launchData]);
 
   return (
     <>

@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import React from "react";
+import { ApiContext } from "../App";
 
 function Crew() {
-  const url = "http://localhost:3001/crew";
+  const { api } = useContext(ApiContext);
+  const url = `${api}/crew`;
   const [data, setData] = useState([]);
 
   useEffect(() => {
