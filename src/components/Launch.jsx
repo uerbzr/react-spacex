@@ -1,9 +1,12 @@
 import React from "react";
+import { useContext } from "react";
+import { ApiContext } from "../App";
 
 import { useParams } from "react-router-dom";
-function Launch({ data }) {
+function Launch() {
   const { id } = useParams();
-  const item = data.find((x) => x.flight_number === Number(id));
+  const { launchData } = useContext(ApiContext);
+  const item = launchData.find((x) => x.flight_number === Number(id));
 
   return (
     <>
